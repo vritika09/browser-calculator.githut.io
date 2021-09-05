@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="calsi.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        
+        <div>
+            <div class="display" align='center'><input type="text" readonly id="d" value="0" disabled></div>
+        <br>
+        
+        <div class="keys">
+        <button class="btn btn-outline-dark" onclick='v("7")'>7</button>
+        <button class="btn btn-outline-dark" onclick='v("8")'>8</button>
+        <button class="btn btn-outline-dark" onclick='v("9")'>9</button>
+        <button class="btn btn-outline-dark" id="op" onclick='v("+")'>+</button>
+        <br>
+
+        
+        <button class="btn btn-outline-dark" onclick='v("4")'>4</button>
+        <button class="btn btn-outline-dark" onclick='v("5")'>5</button>
+        <button class="btn btn-outline-dark" onclick='v("6")'>6</button>
+        <button class="btn btn-outline-dark" id="op" onclick='v("-")'>-</button>
+        <br>
+
+        
+        <button class="btn btn-outline-dark" onclick='v("1")'>1</button>
+        <button class="btn btn-outline-dark" onclick='v("2")'>2</button>
+        <button class="btn btn-outline-dark" onclick='v("3")'>3</button>
+        <button class="btn btn-outline-dark" id="op" onclick='v("*")'>x</button>
+        <br>
+
+        
+        <button class="btn btn-outline-dark" id="c" onclick='c("")'>C</button>
+        <button class="btn btn-outline-dark" onclick='v("0")'>0</button>
+        <button class="btn btn-outline-dark" id="op" onclick='e("=")'>=</button>
+        <button class="btn btn-outline-dark" id="op" onclick='v("/")'>/</button>
+        <br> 
+        
+        </div>
+    </div>
+    <script>
+        function c(val)  
+            {  
+                document.getElementById("d").value=val;  
+}             
+        function v(val)  
+            {
+                document.getElementById("d").value+=val;  
+            }  
+        function e()  
+            {  
+                try  
+                    {  
+                        c(eval(document.getElementById("d").value))  
+                    }                 
+                catch(e)  
+                    {  
+                        c('Error') 
+                    }  
+            } 
+    </script>
+
+
+
+    
+
+</body>
+</html> 
